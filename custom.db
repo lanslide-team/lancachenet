@@ -1,0 +1,7 @@
+router.lanslide.com.au		A	10.20.0.1
+files.lanslide.com.au       A   10.20.0.2
+monitoring.lanslide.com.au	A	10.20.0.2
+m.lanslide.com.au			A	10.20.0.2
+lgs01.lanslide.com.au		A	10.20.0.11
+lgs02.lanslide.com.au		A	10.20.0.11
+cache.lanslide.com.au		A	10.20.6.0

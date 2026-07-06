@@ -1,5 +1,5 @@
 version: '2'
-x-restart-policy: &restart-policy "no"
+x-restart-policy: &restart-policy "unless-stopped"
 services:
   dns:
     image: lancachenet/lancache-dns:latest
@@ -8,6 +8,8 @@ services:
     ports:
       - ${DNS_BIND_IP}:53:53/udp
       - ${DNS_BIND_IP}:53:53/tcp
+    volumes:
+      - /home/ls/lancache/custom.db:/etc/bind/cache/custom.db
 
 ## HTTPS requests are now handled in monolithic directly
 ## you could choose to return to sniproxy if desired
@@ -29,3 +31,4 @@ services:
     volumes:
       - ${CACHE_ROOT}/cache:/data/cache
       - ${CACHE_ROOT}/logs:/data/logs
+
